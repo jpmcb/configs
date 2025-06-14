@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+# OLD - from MacOS
+
 {
   home.username = "jpmcb";
   home.homeDirectory = "/Users/jpmcb";
