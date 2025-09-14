@@ -43,6 +43,7 @@
     # Xcode-select dev tools replacement
     gnumake
     gcc
+    libiconv
 
     starship
 
@@ -77,6 +78,12 @@
     postgresql
     vale
     delta
+    openfga-cli
+    just
+    awscli2
+    kubectx
+    kubectl
+    k9s
 
 
     # If we are not free now, when?
@@ -141,6 +148,16 @@
       Host *
         IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
     '';
+  };
+
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+
+    bash.enable = true; # see note on other shells below
   };
 
   # User-level environment variables
