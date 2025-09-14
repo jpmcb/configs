@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    _1password
+    _1password-gui
   ];
 
   programs._1password.enable = true;
@@ -9,9 +11,4 @@
     enable = true;
     polkitPolicyOwners = [ "jpmcb" ];
   };
-
-  # Enable the unfree 1Password packages
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-  ];
-
 }

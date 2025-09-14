@@ -35,7 +35,9 @@
         format = "ssh";
       };
       "gpg \"ssh\"" = {
-        program = "op-ssh-sign";
+        program = if pkgs.stdenv.isDarwin 
+          then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+          else "op-ssh-sign";
       };
       commit = {
         gpgsign = true;

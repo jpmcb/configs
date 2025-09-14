@@ -60,4 +60,6 @@
     # Disable the warning when changing a file extension
     FXEnableExtensionChangeWarning = false;
   };
+
+  networking.hostName = "westgate";
 }
