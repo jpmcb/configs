@@ -2,17 +2,17 @@
 { config, pkgs, ... }:
 
 {
-  # Common development packages
   home.packages = with pkgs; [
     # Build tools
     gcc
     gnumake
+    libiconv
 
     # Shell / terminal workflows
     fish
     jump
     neovim
-    starship 
+    starship
     vim
 
     # Dev tools
