@@ -7,3 +7,4 @@ export GOBIN="$HOME/.local/bin"
 
 jump shell fish | source
 starship init fish | source
+atuin init fish | source

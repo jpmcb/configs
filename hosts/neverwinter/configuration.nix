@@ -26,6 +26,9 @@
     nerd-fonts.sauce-code-pro
   ];
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   #########
   # OLED Burn-in Prevention Settings
   #########

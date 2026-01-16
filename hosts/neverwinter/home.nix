@@ -6,6 +6,7 @@
     ../../modules/home-manager/dev.nix
 
     # Individual packages
+    ../../pkgs/aerospace/aerospace.nix
     ../../pkgs/git/git.nix
     ../../pkgs/fish/fish.nix
     ../../pkgs/ssh/ssh.nix
@@ -17,6 +18,10 @@
   home.file.".config/ghostty/config" = {
     text = builtins.readFile ../../pkgs/ghostty/ghostty.config;
   };
+
+  home.packages = [
+    pkgs._1password-cli
+  ];
 
   # The state version is required and should stay at the version you
   # originally installed.

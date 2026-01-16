@@ -3,12 +3,16 @@
 
 {
   home.packages = with pkgs; [
+    tmux
+
     # Build tools
     gcc
     gnumake
     libiconv
+    just
 
     # Shell / terminal workflows
+    atuin
     fish
     jump
     neovim
@@ -22,6 +26,7 @@
     fzf
     gh
     htop
+    hurl
     jq
     ripgrep
     wget
@@ -37,7 +42,7 @@
     k6
     ollama
     postgresql
-    openfga
+    openfga-cli
 
     # Gcloud
     (google-cloud-sdk.withExtraComponents [
