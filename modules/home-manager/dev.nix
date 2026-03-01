@@ -3,6 +3,8 @@
 
 {
   home.packages = with pkgs; [
+    atuin
+    direnv
     tmux
 
     # Build tools
@@ -10,13 +12,15 @@
     gnumake
     libiconv
     just
+    cmake
+    hurl
 
     # Shell / terminal workflows
     atuin
     fish
     jump
     neovim
-    starship
+
     vim
 
     # Dev tools
@@ -30,6 +34,7 @@
     jq
     ripgrep
     wget
+    nixd
 
     # Languages / runtimes
     go
@@ -51,18 +56,12 @@
     ])
     google-cloud-sql-proxy
 
+    # AI
+    llama-cpp
   ];
 
   # Development environment variables
   home.sessionVariables = {
     EDITOR = "nvim";
-  };
-
-  # Allow unfree packages
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-    };
   };
 }

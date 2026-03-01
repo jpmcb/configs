@@ -9,6 +9,7 @@
     ../../pkgs/git/git.nix
     ../../pkgs/fish/fish.nix
     ../../pkgs/ssh/ssh.nix
+    ../../pkgs/starship/starship.nix
     ../../pkgs/ghostty/ghossty.nix
     ../../pkgs/zellij/zellij.nix
     ../../pkgs/obs

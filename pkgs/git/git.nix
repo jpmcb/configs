@@ -10,18 +10,10 @@
     # Work-specific git configuration
     includes = [
       {
-        condition = "gitdir:~/workspace/zuplo/";
+        condition = "gitdir:~/workspace/paper-compute-co/";
         contents = {
           user = {
-            email = "john@zuplo.com";
-          };
-        };
-      }
-      {
-        condition = "gitdir:~/workspace/zuplo-poc/";
-        contents = {
-          user = {
-            email = "john@zuplo.com";
+            email = "john@papercompute.com";
           };
         };
       }
@@ -41,6 +33,9 @@
       };
       commit = {
         gpgsign = true;
+      };
+      push = {
+        autoSetupRemote = true;
       };
     };
   };

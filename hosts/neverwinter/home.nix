@@ -10,6 +10,7 @@
     ../../pkgs/git/git.nix
     ../../pkgs/fish/fish.nix
     ../../pkgs/ssh/ssh.nix
+    ../../pkgs/starship/starship.nix
     ../../pkgs/zellij/zellij.nix
   ];
 

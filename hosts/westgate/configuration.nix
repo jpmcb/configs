@@ -2,6 +2,23 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
+  # Linux builder VM for building NixOS images on macOS
+  nix.linux-builder = {
+    enable = true;
+    ephemeral = true;
+    maxJobs = 4;
+    config = {
+      virtualisation = {
+        darwin-builder = {
+          diskSize = 40 * 1024;  # 40GB
+          memorySize = 8 * 1024; # 8GB RAM
+        };
+        cores = 6;
+      };
+    };
+  };
+  nix.settings.trusted-users = [ "@admin" ];
+
   # Enable alternative shell support in nix-darwin.
   programs.fish.enable = true;
 
@@ -11,6 +28,7 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.config.allowUnfree = true;
 
   users.knownUsers = [ "jpmcb" ];
   users.users.jpmcb = {
