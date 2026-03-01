@@ -16,6 +16,14 @@
   };
 
   outputs = { self, nixpkgs, home-manager, nix-darwin, ... }@inputs: {
+    homeConfigurations = {
+      "jpmcb@baldursgate" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./hosts/baldursgate/home.nix ];
+      };
+    };
+
     nixosConfigurations = {
       waterdeep = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -32,20 +40,6 @@
         ];
       };
 
-      baldursgate = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/baldursgate/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jpmcb = import ./hosts/baldursgate/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
-      };
     };
 
     darwinConfigurations = {
