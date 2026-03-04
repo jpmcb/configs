@@ -8,16 +8,16 @@
     # Individual packages
     ../../pkgs/git/git.nix
     ../../pkgs/fish/fish.nix
-    ../../pkgs/ssh/ssh.nix
     ../../pkgs/starship/starship.nix
     ../../pkgs/zellij/zellij.nix
   ];
 
-  home.username = "jpmcb";
-  home.homeDirectory = "/home/jpmcb";
+  home.username = "dev";
+  home.homeDirectory = "/home/dev";
 
   home.packages = with pkgs; [
     _1password-cli
+    opencode
   ];
 
   # The state version is required and should stay at the version you
