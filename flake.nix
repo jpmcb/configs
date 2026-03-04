@@ -17,7 +17,7 @@
 
   outputs = { self, nixpkgs, home-manager, nix-darwin, ... }@inputs: {
     homeConfigurations = {
-      "jpmcb@baldursgate" = home-manager.lib.homeManagerConfiguration {
+      "dev@baldursgate" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./hosts/baldursgate/home.nix ];
