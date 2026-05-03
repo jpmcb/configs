@@ -13,9 +13,20 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Homebrew
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-darwin, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nix-darwin, nix-homebrew, homebrew-core, homebrew-cask, ... }@inputs: {
     homeConfigurations = {
       "dev@baldursgate" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -63,6 +74,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/westgate/configuration.nix
+          ./hosts/westgate/homebrew.nix
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

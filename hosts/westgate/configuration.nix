@@ -55,6 +55,9 @@
 
     # Show scroll bars only when scrolling
     AppleShowScrollBars = "WhenScrolling";
+
+    # Make scrolling normal
+    "com.apple.swipescrolldirection" = false;
   };
 
   # Dock settings for auto-hide
@@ -80,4 +83,12 @@
   };
 
   networking.hostName = "westgate";
+
+  homebrew = {
+      enable = true;
+      #enableFishIntegration = true;
+      casks = [
+        "nikitabobko/tap/aerospace"
+      ];
+  };
 }
