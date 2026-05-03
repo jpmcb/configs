@@ -17,10 +17,11 @@
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
+      "nikitabobko/homebrew-tap" = inputs.homebrew-aerospace;
     };
 
     # With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-    mutableTaps = true;
+    mutableTaps = false;
   };
 
   # Align homebrew taps config with nix-homebrew

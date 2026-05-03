@@ -88,7 +88,10 @@
       enable = true;
       #enableFishIntegration = true;
       casks = [
-        "nikitabobko/tap/aerospace"
+        "aerospace"
+      ];
+      brews = [
+        "git-secrets"
       ];
   };
 }
