@@ -16,6 +16,14 @@
           };
         };
       }
+      {
+        condition = "gitdir:~/workspace/pcc-labs/";
+        contents = {
+          user = {
+            email = "john@papercompute.com";
+          };
+        };
+      }
     ];
 
     extraConfig = {
@@ -34,10 +42,12 @@
       push = {
         autoSetupRemote = true;
       };
-    } // (if pkgs.stdenv.isDarwin then {
+    } // {
       "gpg \"ssh\"" = {
-        program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+        program = if pkgs.stdenv.isDarwin
+          then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+          else "/opt/1Password/op-ssh-sign";
       };
-    } else {});
+    };
   };
 }
