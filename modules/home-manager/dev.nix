@@ -56,8 +56,11 @@
     ])
     google-cloud-sql-proxy
 
+    smartmontools
+
     # AI
     llama-cpp
+    claude-code
   ];
 
   # Development environment variables

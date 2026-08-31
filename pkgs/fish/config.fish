@@ -1,5 +1,6 @@
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Go stuff
 export GOBIN="$HOME/.local/bin"
@@ -12,3 +13,5 @@ end
 jump shell fish | source
 
 atuin init fish | source
+
+paperctl shell fish | source

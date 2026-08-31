@@ -12,6 +12,7 @@
     ../../pkgs/ssh/ssh.nix
     ../../pkgs/starship/starship.nix
     ../../pkgs/zellij/zellij.nix
+    ../../pkgs/npm/default.nix
   ];
 
   # The Ghostty package is currently broken for Darwin - can't use the

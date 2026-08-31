@@ -8,12 +8,13 @@
     # Individual packages
     ../../pkgs/git/git.nix
     ../../pkgs/fish/fish.nix
+    ../../pkgs/ssh/ssh.nix
     ../../pkgs/starship/starship.nix
     ../../pkgs/zellij/zellij.nix
   ];
 
-  home.username = "dev";
-  home.homeDirectory = "/home/dev";
+  home.username = "jmcbride";
+  home.homeDirectory = "/home/jmcbride";
 
   home.packages = with pkgs; [
     _1password-cli

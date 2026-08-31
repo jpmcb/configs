@@ -32,8 +32,11 @@
 
   outputs = { self, nixpkgs, home-manager, nix-darwin, nix-homebrew, homebrew-core, homebrew-cask, homebrew-aerospace, ... }@inputs: {
     homeConfigurations = {
-      "dev@baldursgate" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      "jmcbride@baldursgate" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./hosts/baldursgate/home.nix ];
       };

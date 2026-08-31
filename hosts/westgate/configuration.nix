@@ -55,9 +55,6 @@
 
     # Show scroll bars only when scrolling
     AppleShowScrollBars = "WhenScrolling";
-
-    # Make scrolling normal
-    "com.apple.swipescrolldirection" = false;
   };
 
   # Dock settings for auto-hide
